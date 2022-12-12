@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "dPCYoFeRQYZri0G1425bjOyR48fxP6YPr0ULcyzrflBBkcoO32o8WHiuHUtlOO0o5Aqczh66B598gtWPpY6tTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\junio\\Desktop\\C#\\API\\G_UNAMAD_CEPRE_API\\G_UNAMAD_CEPRE_API\\G_UNAMAD_CEPRE_API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\junio\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\junio\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\junio\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\junio\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\junio\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\junio\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
