@@ -25,19 +25,19 @@ namespace G_UNAMAD_CEPRE_API.Controllers
             return lista;
         }
         [HttpPost]
-        public async Task<ActionResult<ResponseSP>> G_CicloPost([FromBody] G_CicloModelDTOPost g_CicloModelDTOPost)
+        public async Task<ActionResult<ResponseSP>> G_CicloPost([FromBody] G_CicloModelDTO g_CicloModelDTO)
         {
             var funcion = new G_CicloData();
-            G_CicloModel g_CicloModel = _mapper.Map<G_CicloModel>(g_CicloModelDTOPost);
+            G_CicloModel g_CicloModel = _mapper.Map<G_CicloModel>(g_CicloModelDTO);
             var respuestaSP = await funcion.G_CicloInsert(g_CicloModel);
 
             return respuestaSP;
         }
         [HttpPut("{idCiclo}/{cVersion}")]
-        public async Task<ActionResult<ResponseSP>> G_CicloPut(string idCiclo, string cVersion, [FromBody] G_CicloModelDTOPut g_CicloModelDTOPut)
+        public async Task<ActionResult<ResponseSP>> G_CicloPut(string idCiclo, string cVersion, [FromBody] G_CicloModelDTO g_CicloModelDTO)
         {
             var funcion = new G_CicloData();
-            G_CicloModel g_CicloModel = _mapper.Map<G_CicloModel>(g_CicloModelDTOPut);
+            G_CicloModel g_CicloModel = _mapper.Map<G_CicloModel>(g_CicloModelDTO);
             g_CicloModel.IdCiclo = idCiclo;
             g_CicloModel.CVersion = cVersion;
             var respuestaSP = await funcion.G_CicloUpdate(g_CicloModel);
