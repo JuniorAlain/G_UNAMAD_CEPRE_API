@@ -55,6 +55,7 @@ namespace G_UNAMAD_CEPRE_API.Data
                     cmd.Parameters.AddWithValue("@fInicio", g_CicloModel.FInicio);
                     cmd.Parameters.AddWithValue("@fFin", g_CicloModel.FFin);
                     cmd.Parameters.AddWithValue("@eProgreso", g_CicloModel.EProgreso);
+                    cmd.Parameters.AddWithValue("@activo", g_CicloModel.Activo);
                     await sql.OpenAsync();
                     //await cmd.ExecuteNonQueryAsync();
                     using (var item = await cmd.ExecuteReaderAsync())
