@@ -16,6 +16,13 @@ namespace G_UNAMAD_CEPRE_API
                 .ForMember(d => d.EProgreso, o => o.MapFrom(s => s.eProgreso))
                 .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
             ;
-        }
+
+            CreateMap<G_CursoModelDTO, G_CursoModel>()
+                .ForMember(d => d.IdCurso, o => o.MapFrom(s => s.idCurso))
+                .ForMember(d => d.NCurso, o => o.MapFrom(s => s.nCurso))
+                .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
+            ;
+
+        }        
     }
 }
