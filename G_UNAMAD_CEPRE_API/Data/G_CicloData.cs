@@ -5,7 +5,7 @@ using System.Data;
 
 namespace G_UNAMAD_CEPRE_API.Data
 {
-    public class G_CicloData
+    public class G_CicloData : ConvertVersion
     {
         ConnectionBd cn = new ConnectionBd();
         public async Task<List<G_CicloModel>> G_CicloSelectAll()
@@ -33,7 +33,7 @@ namespace G_UNAMAD_CEPRE_API.Data
                             g_CicloModel.EProgreso = (int)item["eProgreso"];
                             g_CicloModel.Activo = (int)item["activo"];
                             g_CicloModel.FRegistroM = (DateTime)item["fRegistroM"];
-                            g_CicloModel.CVersion = ConvertVersion((byte[])item["cVersion"]);
+                            g_CicloModel.CVersion = StringVersion((byte[])item["cVersion"]);
                             lista.Add(g_CicloModel);
                         }
                     }
@@ -85,7 +85,7 @@ namespace G_UNAMAD_CEPRE_API.Data
                     cmd.Parameters.AddWithValue("@fFin", g_CicloModel.FFin);
                     cmd.Parameters.AddWithValue("@eProgreso", g_CicloModel.EProgreso);
                     cmd.Parameters.AddWithValue("@activo", g_CicloModel.Activo);
-                    cmd.Parameters.AddWithValue("@cVersion", ConvertVersion(g_CicloModel.CVersion));
+                    cmd.Parameters.AddWithValue("@cVersion", ByteVersion(g_CicloModel.CVersion));
                     await sql.OpenAsync();
                     //await cmd.ExecuteNonQueryAsync();
                     using (var item = await cmd.ExecuteReaderAsync())
@@ -109,7 +109,7 @@ namespace G_UNAMAD_CEPRE_API.Data
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idCiclo", g_CicloModel.IdCiclo);
-                    cmd.Parameters.AddWithValue("@cVersion", ConvertVersion(g_CicloModel.CVersion));
+                    cmd.Parameters.AddWithValue("@cVersion", ByteVersion(g_CicloModel.CVersion));
                     await sql.OpenAsync();
                     //await cmd.ExecuteNonQueryAsync();
                     using (var item = await cmd.ExecuteReaderAsync())
@@ -123,14 +123,6 @@ namespace G_UNAMAD_CEPRE_API.Data
                 }
             }
             return responseSP;
-        }
-        private string ConvertVersion(byte[] cVersion)
-        {
-            return String.Concat("0x", BitConverter.ToString(cVersion).Replace("-", ""));
-        }
-        private byte[] ConvertVersion(string cVersion)
-        {
-            return Convert.FromHexString(cVersion.Replace("0x", ""));
         }
     }
 }
