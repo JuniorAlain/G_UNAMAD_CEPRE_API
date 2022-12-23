@@ -41,7 +41,7 @@ namespace G_UNAMAD_CEPRE_API.Controllers
 
             return await funcion.G_CursoInsert(g_CursoModel);
         }
-        [HttpPut("{id}/{cVersion}")]
+        [HttpPut("{id}/{version}")]
         public async Task<ActionResult<ResponseSP>> G_CursoPut(string id, string version, [FromBody] G_CursoModelDTO g_CursoModelDTO)
         {
             var funcion = new G_CursoData();
@@ -52,7 +52,7 @@ namespace G_UNAMAD_CEPRE_API.Controllers
 
             return await funcion.G_CursoUpdate(g_CursoModel);
         }
-        [HttpDelete("{id}/{cVersion}")]
+        [HttpDelete("{id}/{version}")]
         public async Task<ActionResult<ResponseSP>> G_CursoDelete(string id, string version)
         {
             var funcion = new G_CursoData();

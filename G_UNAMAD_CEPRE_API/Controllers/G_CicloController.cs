@@ -38,22 +38,22 @@ namespace G_UNAMAD_CEPRE_API.Controllers
             
             return await funcion.G_CicloInsert(g_CicloModel);
         }
-        [HttpPut("{id}/{cVersion}")]
-        public async Task<ActionResult<ResponseSP>> G_CicloPut(string id, string cVersion, [FromBody] G_CicloModelDTO g_CicloModelDTO)
+        [HttpPut("{id}/{version}")]
+        public async Task<ActionResult<ResponseSP>> G_CicloPut(string id, string version, [FromBody] G_CicloModelDTO g_CicloModelDTO)
         {
             var funcion = new G_CicloData();
             G_CicloModel g_CicloModel = _mapper.Map<G_CicloModel>(g_CicloModelDTO);
             g_CicloModel.IdCiclo = id;
-            g_CicloModel.CVersion = cVersion;            
+            g_CicloModel.CVersion = version;            
 
             return await funcion.G_CicloUpdate(g_CicloModel);
         }
-        [HttpDelete("{id}/{cVersion}")]
-        public async Task<ActionResult<ResponseSP>> G_CicloDelete(string id, string cVersion)
+        [HttpDelete("{id}/{version}")]
+        public async Task<ActionResult<ResponseSP>> G_CicloDelete(string id, string version)
         {
             var funcion = new G_CicloData();                                    
 
-            return await funcion.G_CicloDelete(id, cVersion);
+            return await funcion.G_CicloDelete(id, version);
         }
     }
 }
