@@ -41,6 +41,36 @@ namespace G_UNAMAD_CEPRE_API.Data
             }
             return lista;
         }
+        public async Task<G_CicloModel> G_CicloSelectId(string idCiclo)
+        {
+            var g_CicloModel = new G_CicloModel();
+            using (var sql = new SqlConnection(cn.cadendaSQL()))
+            {
+                using (var cmd = new SqlCommand("SP_G_CicloSelectId", sql))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idCiclo", idCiclo);
+                    await sql.OpenAsync();
+
+                    using (var item = await cmd.ExecuteReaderAsync())
+                    {
+                        if (await item.ReadAsync())
+                        {
+                            g_CicloModel.IdCiclo = (string)item["idCiclo"];
+                            g_CicloModel.NCiclo = (string)item["nCiclo"];
+                            g_CicloModel.Periodo = (string)item["periodo"];
+                            g_CicloModel.FInicio = (DateTime)item["fInicio"];
+                            g_CicloModel.FFin = (DateTime)item["fFin"];
+                            g_CicloModel.EProgreso = (int)item["eProgreso"];
+                            g_CicloModel.Activo = (int)item["activo"];
+                            g_CicloModel.FRegistroM = (DateTime)item["fRegistroM"];
+                            g_CicloModel.CVersion = StringVersion((byte[])item["cVersion"]);
+                        }
+                    }
+                }
+            }
+            return g_CicloModel;
+        }
         public async Task<ResponseSP> G_CicloInsert(G_CicloModel g_CicloModel)
         {
             var responseSP = new ResponseSP();

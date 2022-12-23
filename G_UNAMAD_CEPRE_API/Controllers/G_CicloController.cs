@@ -24,6 +24,13 @@ namespace G_UNAMAD_CEPRE_API.Controllers
 
             return lista;
         }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<G_CicloModel>> G_CicloGetId(string id)
+        {
+            var funcion = new G_CicloData();
+
+            return await funcion.G_CicloSelectId(id);
+        }
         [HttpPost]
         public async Task<ActionResult<ResponseSP>> G_CicloPost([FromBody] G_CicloModelDTO g_CicloModelDTO)
         {
