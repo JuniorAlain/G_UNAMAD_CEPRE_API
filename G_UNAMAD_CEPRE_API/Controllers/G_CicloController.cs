@@ -19,10 +19,9 @@ namespace G_UNAMAD_CEPRE_API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<G_CicloModel>>> G_CicloGetAll()
         {
-            var funcion = new G_CicloData();
-            var lista = await funcion.G_CicloSelectAll();
+            var funcion = new G_CicloData();            
 
-            return lista;
+            return await funcion.G_CicloSelectAll();
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<G_CicloModel>> G_CicloGetId(string id)
@@ -36,28 +35,25 @@ namespace G_UNAMAD_CEPRE_API.Controllers
         {
             var funcion = new G_CicloData();
             G_CicloModel g_CicloModel = _mapper.Map<G_CicloModel>(g_CicloModelDTO);
-            var respuestaSP = await funcion.G_CicloInsert(g_CicloModel);
-
-            return respuestaSP;
+            
+            return await funcion.G_CicloInsert(g_CicloModel);
         }
-        [HttpPut("{idCiclo}/{cVersion}")]
-        public async Task<ActionResult<ResponseSP>> G_CicloPut(string idCiclo, string cVersion, [FromBody] G_CicloModelDTO g_CicloModelDTO)
+        [HttpPut("{id}/{cVersion}")]
+        public async Task<ActionResult<ResponseSP>> G_CicloPut(string id, string cVersion, [FromBody] G_CicloModelDTO g_CicloModelDTO)
         {
             var funcion = new G_CicloData();
             G_CicloModel g_CicloModel = _mapper.Map<G_CicloModel>(g_CicloModelDTO);
-            g_CicloModel.IdCiclo = idCiclo;
-            g_CicloModel.CVersion = cVersion;
-            var respuestaSP = await funcion.G_CicloUpdate(g_CicloModel);
+            g_CicloModel.IdCiclo = id;
+            g_CicloModel.CVersion = cVersion;            
 
-            return respuestaSP;
+            return await funcion.G_CicloUpdate(g_CicloModel);
         }
-        [HttpDelete("{idCiclo}/{cVersion}")]
-        public async Task<ActionResult<ResponseSP>> G_CicloDelete(string idCiclo, string cVersion)
+        [HttpDelete("{id}/{cVersion}")]
+        public async Task<ActionResult<ResponseSP>> G_CicloDelete(string id, string cVersion)
         {
-            var funcion = new G_CicloData();                        
-            var respuestaSP = await funcion.G_CicloDelete(idCiclo, cVersion);
+            var funcion = new G_CicloData();                                    
 
-            return respuestaSP;
+            return await funcion.G_CicloDelete(id, cVersion);
         }
     }
 }
