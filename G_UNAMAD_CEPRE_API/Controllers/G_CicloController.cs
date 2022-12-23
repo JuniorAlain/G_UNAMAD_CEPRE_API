@@ -54,11 +54,8 @@ namespace G_UNAMAD_CEPRE_API.Controllers
         [HttpDelete("{idCiclo}/{cVersion}")]
         public async Task<ActionResult<ResponseSP>> G_CicloDelete(string idCiclo, string cVersion)
         {
-            var funcion = new G_CicloData();
-            G_CicloModel g_CicloModel = new G_CicloModel();
-            g_CicloModel.IdCiclo = idCiclo;
-            g_CicloModel.CVersion = cVersion;
-            var respuestaSP = await funcion.G_CicloDelete(g_CicloModel);
+            var funcion = new G_CicloData();                        
+            var respuestaSP = await funcion.G_CicloDelete(idCiclo, cVersion);
 
             return respuestaSP;
         }

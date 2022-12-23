@@ -130,7 +130,7 @@ namespace G_UNAMAD_CEPRE_API.Data
             }
             return responseSP;
         }
-        public async Task<ResponseSP> G_CicloDelete(G_CicloModel g_CicloModel)
+        public async Task<ResponseSP> G_CicloDelete(string idCiclo, string cVersion)
         {
             var responseSP = new ResponseSP();
             using (var sql = new SqlConnection(cn.cadendaSQL()))
@@ -138,8 +138,8 @@ namespace G_UNAMAD_CEPRE_API.Data
                 using (var cmd = new SqlCommand("SP_G_CicloDelete", sql))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@idCiclo", g_CicloModel.IdCiclo);
-                    cmd.Parameters.AddWithValue("@cVersion", ByteVersion(g_CicloModel.CVersion));
+                    cmd.Parameters.AddWithValue("@idCiclo", idCiclo);
+                    cmd.Parameters.AddWithValue("@cVersion", ByteVersion(cVersion));
                     await sql.OpenAsync();
                     //await cmd.ExecuteNonQueryAsync();
                     using (var item = await cmd.ExecuteReaderAsync())
