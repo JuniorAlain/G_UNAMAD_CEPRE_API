@@ -23,6 +23,11 @@ namespace G_UNAMAD_CEPRE_API
                 .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
             ;
 
+            CreateMap<G_CarreraModelDTO, G_CarreraModel>()
+                .ForMember(d => d.IdCarrera, o => o.MapFrom(s => s.idCarrera))
+                .ForMember(d => d.NCarrera, o => o.MapFrom(s => s.nCarrera))
+                .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
+            ;
         }        
     }
 }
