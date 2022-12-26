@@ -11,7 +11,7 @@ namespace G_UNAMAD_CEPRE_API.Data
         public async Task<List<G_CursoModel>> G_CursoSelectAll()
         {
             var lista = new List<G_CursoModel>();
-            using (var sql = new SqlConnection(cn.cadendaSQL()))
+            using (var sql = new SqlConnection(cn.cadenaSQL()))
             {
                 using (var cmd = new SqlCommand("SP_G_CursoSelectAll", sql))
                 {
@@ -38,7 +38,7 @@ namespace G_UNAMAD_CEPRE_API.Data
         public async Task<G_CursoModel> G_CursoSelectId(string idCurso)
         {
             var g_CursoModel = new G_CursoModel();
-            using (var sql = new SqlConnection(cn.cadendaSQL()))
+            using (var sql = new SqlConnection(cn.cadenaSQL()))
             {
                 using (var cmd = new SqlCommand("SP_G_CursoSelectId", sql))
                 {
@@ -64,7 +64,7 @@ namespace G_UNAMAD_CEPRE_API.Data
         public async Task<ResponseSP> G_CursoInsert(G_CursoModel g_CursoModel)
         {
             var responseSP = new ResponseSP();
-            using (var sql = new SqlConnection(cn.cadendaSQL()))
+            using (var sql = new SqlConnection(cn.cadenaSQL()))
             {
                 using (var cmd = new SqlCommand("SP_G_CursoInsert", sql))
                 {
@@ -89,7 +89,7 @@ namespace G_UNAMAD_CEPRE_API.Data
         public async Task<ResponseSP> G_CursoUpdate(G_CursoModel g_CursoModel)
         {
             var responseSP = new ResponseSP();
-            using (var sql = new SqlConnection(cn.cadendaSQL()))
+            using (var sql = new SqlConnection(cn.cadenaSQL()))
             {
                 using (var cmd = new SqlCommand("SP_G_CursoUpdate", sql))
                 {
@@ -115,7 +115,7 @@ namespace G_UNAMAD_CEPRE_API.Data
         public async Task<ResponseSP> G_CursoDelete(string idCurso, string cVersion)
         {
             var responseSP = new ResponseSP();
-            using (var sql = new SqlConnection(cn.cadendaSQL()))
+            using (var sql = new SqlConnection(cn.cadenaSQL()))
             {
                 using (var cmd = new SqlCommand("SP_G_CursoDelete", sql))
                 {

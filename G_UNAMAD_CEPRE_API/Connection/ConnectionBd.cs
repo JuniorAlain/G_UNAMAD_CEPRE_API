@@ -10,7 +10,7 @@
             connectionString = build.GetSection("ConnectionStrings:Conexion").Value;
         }
 
-        public string cadendaSQL()
+        public string cadenaSQL()
         {
             return connectionString;
         }

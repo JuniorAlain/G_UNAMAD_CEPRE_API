@@ -12,7 +12,7 @@ namespace G_UNAMAD_CEPRE_API.Data
         {
             var lista = new List<G_CicloModel>();
             //using para la conexion
-            using (var sql = new SqlConnection(cn.cadendaSQL()))
+            using (var sql = new SqlConnection(cn.cadenaSQL()))
             {
                 //using para ejecutar el procedimiento almacenado
                 using (var cmd = new SqlCommand("SP_G_CicloSelectAll", sql))
@@ -44,7 +44,7 @@ namespace G_UNAMAD_CEPRE_API.Data
         public async Task<G_CicloModel> G_CicloSelectId(string idCiclo)
         {
             var g_CicloModel = new G_CicloModel();
-            using (var sql = new SqlConnection(cn.cadendaSQL()))
+            using (var sql = new SqlConnection(cn.cadenaSQL()))
             {
                 using (var cmd = new SqlCommand("SP_G_CicloSelectId", sql))
                 {
@@ -74,7 +74,7 @@ namespace G_UNAMAD_CEPRE_API.Data
         public async Task<ResponseSP> G_CicloInsert(G_CicloModel g_CicloModel)
         {
             var responseSP = new ResponseSP();
-            using (var sql = new SqlConnection(cn.cadendaSQL()))
+            using (var sql = new SqlConnection(cn.cadenaSQL()))
             {
                 using (var cmd = new SqlCommand("SP_G_CicloInsert", sql))
                 {
@@ -103,7 +103,7 @@ namespace G_UNAMAD_CEPRE_API.Data
         public async Task<ResponseSP> G_CicloUpdate(G_CicloModel g_CicloModel)
         {
             var responseSP = new ResponseSP();
-            using (var sql = new SqlConnection(cn.cadendaSQL()))
+            using (var sql = new SqlConnection(cn.cadenaSQL()))
             {
                 using (var cmd = new SqlCommand("SP_G_CicloUpdate", sql))
                 {
@@ -133,7 +133,7 @@ namespace G_UNAMAD_CEPRE_API.Data
         public async Task<ResponseSP> G_CicloDelete(string idCiclo, string cVersion)
         {
             var responseSP = new ResponseSP();
-            using (var sql = new SqlConnection(cn.cadendaSQL()))
+            using (var sql = new SqlConnection(cn.cadenaSQL()))
             {
                 using (var cmd = new SqlCommand("SP_G_CicloDelete", sql))
                 {
