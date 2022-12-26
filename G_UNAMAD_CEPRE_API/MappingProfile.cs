@@ -40,6 +40,12 @@ namespace G_UNAMAD_CEPRE_API
                 .ForMember(d => d.NTema, o => o.MapFrom(s => s.nTema))
                 .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
             ;
+
+            CreateMap<G_TurnoModelDTO, G_TurnoModel>()
+                .ForMember(d => d.IdTurno, o => o.MapFrom(s => s.idTurno))
+                .ForMember(d => d.NTurno, o => o.MapFrom(s => s.nTurno))
+                .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
+            ;
         }        
     }
 }
