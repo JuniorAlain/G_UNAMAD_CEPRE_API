@@ -34,6 +34,12 @@ namespace G_UNAMAD_CEPRE_API
                 .ForMember(d => d.NGrupo, o => o.MapFrom(s => s.nGrupo))
                 .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
             ;
+
+            CreateMap<G_TemaModelDTO, G_TemaModel>()
+                .ForMember(d => d.IdTema, o => o.MapFrom(s => s.idTema))
+                .ForMember(d => d.NTema, o => o.MapFrom(s => s.nTema))
+                .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
+            ;
         }        
     }
 }
