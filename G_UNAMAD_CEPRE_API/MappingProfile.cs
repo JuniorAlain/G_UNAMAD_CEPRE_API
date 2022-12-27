@@ -70,6 +70,12 @@ namespace G_UNAMAD_CEPRE_API
                 .ForMember(d => d.NGradoAcademico, o => o.MapFrom(s => s.nGradoAcademico))
                 .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
             ;
+
+            CreateMap<G_DocumentoGradoModelDTO, G_DocumentoGradoModel>()
+                .ForMember(d => d.IdDocumentoGrado, o => o.MapFrom(s => s.idDocumentoGrado))
+                .ForMember(d => d.NDocumentoGrado, o => o.MapFrom(s => s.nDocumentoGrado))
+                .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
+            ;
         }        
     }
 }
