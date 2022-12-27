@@ -1,5 +1,5 @@
 using AutoMapper;
-using G_UNAMAD_CEPRE_API;
+using G_UNAMAD_CEPRE_API.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 

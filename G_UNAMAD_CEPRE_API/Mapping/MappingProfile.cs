@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using G_UNAMAD_CEPRE_API.Models;
 
-namespace G_UNAMAD_CEPRE_API
+namespace G_UNAMAD_CEPRE_API.Mapping
 {
     public class MappingProfile : Profile
     {
@@ -86,7 +86,7 @@ namespace G_UNAMAD_CEPRE_API
                 .ForMember(d => d.CDistrito, o => o.MapFrom(s => s.cDistrito))
                 .ForMember(d => d.NDistrito, o => o.MapFrom(s => s.nDistrito))
                 .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
-            ;            
-        }        
+            ;
+        }
     }
 }
