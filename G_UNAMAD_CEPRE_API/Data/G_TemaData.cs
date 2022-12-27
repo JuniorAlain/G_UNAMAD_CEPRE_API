@@ -7,7 +7,7 @@ namespace G_UNAMAD_CEPRE_API.Data
 {
     public class G_TemaData : ConvertVersion
     {
-        ConnectionBd cn = new ConnectionBd();
+        ConnectionDb cn = new ConnectionDb();
         public async Task<List<G_TemaModel>> G_TemaSelectAll()
         {
             var lista = new List<G_TemaModel>();

@@ -1,9 +1,9 @@
 ﻿namespace G_UNAMAD_CEPRE_API.Connection
 {
-    public class ConnectionBd
+    public class ConnectionDb
     {
         private string connectionString = string.Empty;
-        public ConnectionBd()
+        public ConnectionDb()
         {
             var build = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
 

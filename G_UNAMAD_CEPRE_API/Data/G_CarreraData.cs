@@ -7,7 +7,7 @@ namespace G_UNAMAD_CEPRE_API.Data
 {
     public class G_CarreraData : ConvertVersion
     {
-        ConnectionBd cn = new ConnectionBd();
+        ConnectionDb cn = new ConnectionDb();
         public async Task<List<G_CarreraModel>> G_CarreraSelectAll()
         {
             var lista = new List<G_CarreraModel>();

@@ -7,7 +7,7 @@ namespace G_UNAMAD_CEPRE_API.Data
 {
     public class G_UbigeoData : ConvertVersion
     {
-        ConnectionBd cn = new ConnectionBd();
+        ConnectionDb cn = new ConnectionDb();
         public async Task<List<G_UbigeoModel>> G_UbigeoSelectAll()
         {
             var lista = new List<G_UbigeoModel>();

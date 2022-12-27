@@ -7,7 +7,7 @@ namespace G_UNAMAD_CEPRE_API.Data
 {
     public class G_CicloData : ConvertVersion
     {
-        ConnectionBd cn = new ConnectionBd();
+        ConnectionDb cn = new ConnectionDb();
         public async Task<List<G_CicloModel>> G_CicloSelectAll()
         {
             var lista = new List<G_CicloModel>();

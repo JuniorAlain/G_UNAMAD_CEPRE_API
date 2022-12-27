@@ -7,7 +7,7 @@ namespace G_UNAMAD_CEPRE_API.Data
 {
     public class G_DocumentoGradoData : ConvertVersion
     {
-        ConnectionBd cn = new ConnectionBd();
+        ConnectionDb cn = new ConnectionDb();
         public async Task<List<G_DocumentoGradoModel>> G_DocumentoGradoSelectAll()
         {
             var lista = new List<G_DocumentoGradoModel>();
