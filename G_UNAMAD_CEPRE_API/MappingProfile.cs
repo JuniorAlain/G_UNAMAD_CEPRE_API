@@ -52,6 +52,12 @@ namespace G_UNAMAD_CEPRE_API
                 .ForMember(d => d.NAula, o => o.MapFrom(s => s.nAula))
                 .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
             ;
+
+            CreateMap<G_ModalidadModelDTO, G_ModalidadModel>()
+                .ForMember(d => d.IdModalidad, o => o.MapFrom(s => s.idModalidad))
+                .ForMember(d => d.NModalidad, o => o.MapFrom(s => s.nModalidad))
+                .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
+            ;
         }        
     }
 }
