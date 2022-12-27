@@ -76,6 +76,17 @@ namespace G_UNAMAD_CEPRE_API
                 .ForMember(d => d.NDocumentoGrado, o => o.MapFrom(s => s.nDocumentoGrado))
                 .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
             ;
+
+            CreateMap<G_UbigeoModelDTO, G_UbigeoModel>()
+                .ForMember(d => d.IdUbigeo, o => o.MapFrom(s => s.idUbigeo))
+                .ForMember(d => d.CDepartamento, o => o.MapFrom(s => s.cDepartamento))
+                .ForMember(d => d.NDepartamento, o => o.MapFrom(s => s.nDepartamento))
+                .ForMember(d => d.CProvincia, o => o.MapFrom(s => s.cProvincia))
+                .ForMember(d => d.NProvincia, o => o.MapFrom(s => s.nProvincia))
+                .ForMember(d => d.CDistrito, o => o.MapFrom(s => s.cDistrito))
+                .ForMember(d => d.NDistrito, o => o.MapFrom(s => s.nDistrito))
+                .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
+            ;            
         }        
     }
 }
