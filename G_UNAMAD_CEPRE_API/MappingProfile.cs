@@ -58,6 +58,12 @@ namespace G_UNAMAD_CEPRE_API
                 .ForMember(d => d.NModalidad, o => o.MapFrom(s => s.nModalidad))
                 .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
             ;
+
+            CreateMap<G_TipoDocumentoModelDTO, G_TipoDocumentoModel>()
+                .ForMember(d => d.IdTipoDocumento, o => o.MapFrom(s => s.idTipoDocumento))
+                .ForMember(d => d.NTipoDocumento, o => o.MapFrom(s => s.nTipoDocumento))
+                .ForMember(d => d.Activo, o => o.MapFrom(s => s.activo))
+            ;
         }        
     }
 }
