@@ -1,4 +1,5 @@
 ﻿using G_UNAMAD_CEPRE_API.Connection;
+using G_UNAMAD_CEPRE_API.Helpers;
 using G_UNAMAD_CEPRE_API.Models;
 using Microsoft.Data.SqlClient;
 using System.Data;
