@@ -3,11 +3,11 @@
     public class G_CicloModelDTO
     {
         public string idCiclo { get; set; }
-        public string nCiclo { set; get; }
-        public string periodo { set; get; }
-        public DateTime fInicio { set; get; }
-        public DateTime fFin { set; get; }
-        public int eProgreso { set; get; }
-        public int activo { set; get; }
+        public string nCiclo { get; set; }
+        public string periodo { get; set; }
+        public DateTime fInicio { get; set; }
+        public DateTime fFin { get; set; }
+        public int eProgreso { get; set; }
+        public int activo { get; set; }
     }
 }

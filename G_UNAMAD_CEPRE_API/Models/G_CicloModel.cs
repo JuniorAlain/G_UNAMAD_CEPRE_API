@@ -3,13 +3,13 @@
     public class G_CicloModel
     {
         public string IdCiclo { get; set; }
-        public string NCiclo { set; get; }
-        public string Periodo { set; get; }
-        public DateTime FInicio { set; get; }
-        public DateTime FFin { set; get; }
-        public int EProgreso { set; get; }
-        public int Activo { set; get; }
-        public DateTime FRegistroM { set; get; }
-        public string CVersion { set; get; }
+        public string NCiclo { get; set; }
+        public string Periodo { get; set; }
+        public DateTime FInicio { get; set; }
+        public DateTime FFin { get; set; }
+        public int EProgreso { get; set; }
+        public int Activo { get; set; }
+        public DateTime FRegistroM { get; set; }
+        public string CVersion { get; set; }
     }
 }
